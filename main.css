@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P');
+
+// Core Styles
+:root {
+    font-size: 16px;
+    scroll-behavior: smooth;;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Code Pro', monospace;
+    // font-family: 'Press Start 2P', cursive;
+    color: antiquewhite;
+}
+
+body {
+    height: 100%;
+    background-color: rgb(47, 79, 79);
+    
+}
+
+.container {
+    margin: 8% auto;
+    max-width: 550px;
+}
+
+.header {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#add-icon {
+    height: 28px;
+    width: 28px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 30px 20px;
+    background-color: rgb(65, 111, 111);
+    border-radius: 15px;
+}
+
+.shoe-icon {
+    margin-right: 15px;
+    height: 40px;
+    width: 40px;
+}
+
+.card-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.distance-display {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.distance-number, .distance-unit {
+    text-align: center;
+}
+
+.card-controls {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    border-left: 2px antiquewhite solid;
+    padding-left: 10px;
+}
+
+#edit-icon {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 640px) {
+    .container {
+        margin: 8%;
+    }
+}
