@@ -1,5 +1,11 @@
 <?php include ('config/database.php');?>
 
+<?php
+$stmt = $pdo->prepare('SELECT * FROM shoes');
+$stmt->execute();
+$shoes = $stmt->fetchAll(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +20,8 @@
                 <h4 class="distance-unit">miles</h4>
             </div>
             <div class="card-controls">
-                <a href=""><img id="edit-icon" class="card-icon" src="img/pen-solid.svg" alt=""></a>
-                <a href=""><img id="delete-icon" class="card-icon" src="img/trash-can-solid.svg" alt=""></a>
+                <a href="update.php?id=<?php echo htmlspecialchars($shoe->id); ?>"><img id="edit-icon" class="card-icon" src="img/pen-solid.svg" alt=""></a>
+                <a href="delete.php?id=<?php echo htmlspecialchars($shoe->id); ?>"><img id="delete-icon" class="card-icon" src="img/trash-can-solid.svg" alt=""></a>
             </div>
         </div>
         <?php } ?>

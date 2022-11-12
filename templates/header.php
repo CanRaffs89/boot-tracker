@@ -8,6 +8,6 @@
 <body>
     <div class="container">
         <div class="header">
-            <h2>Boot Tracker</h2>
-            <a href=""><img id="add-icon" src="img/circle-plus-solid.svg" alt=""></a>
+            <a href="index.php"><h2>Boot Tracker</h2></a>
+            <a href="add.php"><img id="add-icon" src="img/circle-plus-solid.svg" alt=""></a>
         </div>
