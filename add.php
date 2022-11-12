@@ -7,6 +7,7 @@ $distance = 0.0;
 
 $nameError = '';
 $typeError = '';
+$successMsg = '';
 
 if(isset($_POST['submit'])) {
     if(empty($_POST['shoe-name'])) {
@@ -23,7 +24,7 @@ if(isset($_POST['submit'])) {
     if(empty($nameError) && empty($typeError)) {
         $stmt = $pdo->prepare('INSERT INTO shoes(name, type, distance) VALUES(?, ?, ?)');
         $stmt->execute([$name, $type, $distance]);
-        echo 'Shoes added!';
+        $successMsg = 'Shoes added!';
     }
 }
 
@@ -56,6 +57,11 @@ if(isset($_POST['submit'])) {
         <option value="Casual">Casual</option>
     </select>
     <input id="shoe-form-submit" name="submit" type="submit" value="Submit">
+
+    <?php if(!empty($successMsg)) {
+    echo "<h3 style='color:palegreen;margin:20px auto;'>$successMsg</h3>";
+    } ?>
+
 </form>
 
 <?php include ('templates/footer.php');?>
