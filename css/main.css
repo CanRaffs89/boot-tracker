@@ -32,9 +32,13 @@ a {
     justify-content: space-between;
 }
 
-#add-icon {
+#add-icon, #miles-form-submit {
     height: 28px;
     width: 28px;
+}
+
+#miles-form-submit {
+    margin: 20px auto 0 auto;
 }
 
 form, .card {
@@ -46,10 +50,21 @@ form, .card {
     border-radius: 15px;
 }
 
+.card-update {
+    flex-direction: column;
+}
+
 .shoe-icon {
     margin-right: 15px;
     height: 40px;
     width: 40px;
+}
+
+.shoe-icon-update {
+    margin-right: 0;
+    height: 50px;
+    width: 50px;
+    margin: 20px auto;
 }
 
 .card-icon {
@@ -63,11 +78,15 @@ form, .card {
     margin-left: auto;
 }
 
+.distance-display-update {
+    margin-left: 0;
+}
+
 .distance-number, .distance-unit {
     text-align: center;
 }
 
-.card-controls {
+.card-buttons {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
@@ -99,6 +118,24 @@ form {
 
 #shoe-form-submit {
     width: 50%;
+    margin: 0 auto;
+}
+
+#distance-input-label {
+    margin: 0 auto 10px auto;
+}
+
+#distance-input {
+    font-size: 44px;
+    width: 50%;
+    margin: 10px auto;
+    background-color: #222;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#update-success-msg {
     margin: 0 auto;
 }
 
