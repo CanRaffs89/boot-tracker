@@ -13,7 +13,13 @@ $shoes = $stmt->fetchAll();
 
         <?php foreach($shoes as $shoe) { ?>
             <div class="card">
-                <img class="shoe-icon" src="img/shoe-prints-solid.svg" alt="">
+                <?php if($shoe->type == 'Hiking') { ?>
+                    <img class="shoe-icon" src="img/hiking-icon.svg" alt="">
+                <?php } elseif($shoe->type == "Running") { ?>
+                    <img class="shoe-icon" src="img/running-icon.svg" alt="">
+                <?php } else { ?>
+                    <img class="shoe-icon" src="img/casual-icon.svg" alt="">
+                <?php } ?>
                 <h3><?php echo htmlspecialchars($shoe->name); ?></h3>
                 <div class="distance-display">
                     <h1 class="distance-number"><?php echo htmlspecialchars($shoe->distance); ?></h1>
