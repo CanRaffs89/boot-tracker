@@ -1,15 +1,17 @@
 <?php 
 
-use Dotenv\Dotenv;
+include ('config.php');
 
-require_once dirname(__FILE__) . '/vendor/autoload.php';
+// use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+// require_once dirname(__FILE__) . '/vendor/autoload.php';
 
-$dsn = 'mysql:host=' . $_ENV['DATABASE_HOST'] . ';dbname=' . $_ENV['DATABASE_NAME'];
-$pdo = new PDO($dsn, $_ENV['DATABASE_USER'], $_ENV['DATABASE_PASSWORD']);
-$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+// $dotenv = Dotenv::createImmutable(__DIR__);
+// $dotenv->load();
+
+// $dsn = 'mysql:host=' . $_ENV['DATABASE_HOST'] . ';dbname=' . $_ENV['DATABASE_NAME'];
+// $pdo = new PDO($dsn, $_ENV['DATABASE_USER'], $_ENV['DATABASE_PASSWORD']);
+// $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
 $stmt = $pdo->prepare('SELECT * FROM shoes');
 $stmt->execute();
