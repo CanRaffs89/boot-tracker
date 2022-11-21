@@ -35,7 +35,7 @@ if(isset($_POST['submit'])) {
 <?php include ('templates/header.php');?>
 
 <h2>Add a New Shoe</h2>
-<form action="add.php" method="POST">
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>;" method="POST">
     <label for="shoe-name">Enter a shoe name...</label>
 
     <?php if(!empty($nameError)) {
