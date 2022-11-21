@@ -9,11 +9,6 @@ $nameError = '';
 $typeError = '';
 
 if(isset($_POST['submit'])) {
-    if(empty($nameError) && empty($typeError)) {
-        $stmt = $pdo->prepare('INSERT INTO shoes(name, type, distance) VALUES(?, ?, ?)');
-        $stmt->execute([$name, $type, $distance]);
-        header('Location: index.php'); 
-    }
     if(empty($_POST['shoe-name'])) {
         $nameError = 'Please enter a name';
     } else {
@@ -23,6 +18,12 @@ if(isset($_POST['submit'])) {
         $typeError = 'Please select a shoe type';
     } else {
         $type = filter_input(INPUT_POST, 'shoe-type', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    }
+
+    if(empty($nameError) && empty($typeError)) {
+        $stmt = $pdo->prepare('INSERT INTO shoes(name, type, distance) VALUES(?, ?, ?)');
+        $stmt->execute([$name, $type, $distance]);
+        header('Location: index.php');
     }
 }
 
