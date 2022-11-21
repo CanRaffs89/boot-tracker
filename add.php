@@ -24,6 +24,7 @@ if(isset($_POST['submit'])) {
     if(empty($nameError) && empty($typeError)) {
         $stmt = $pdo->prepare('INSERT INTO shoes(name, type, distance) VALUES(?, ?, ?)');
         $stmt->execute([$name, $type, $distance]);
+        header('Location: index.php', true, 301); exit;
     }
 }
 
