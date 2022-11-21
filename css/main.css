@@ -119,6 +119,9 @@ form {
 #shoe-form-submit {
     width: 50%;
     margin: 0 auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 #distance-input-label {

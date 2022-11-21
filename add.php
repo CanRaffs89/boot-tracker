@@ -1,6 +1,7 @@
 <?php include ('config.php');?>
 
 <?php 
+ob_start();
 
 $name = $type = '';
 $distance = 0.0;
@@ -27,6 +28,7 @@ if(isset($_POST['submit'])) {
     }
 }
 
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>
