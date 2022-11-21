@@ -1,6 +1,8 @@
-<?php include ('config.php');?>
-
 <?php
+
+ob_start();
+
+include ('config.php');
 
 $name = $type = '';
 $distance = 0.0;
@@ -23,10 +25,12 @@ if(isset($_POST['submit'])) {
     if(empty($nameError) && empty($typeError)) {
         $stmt = $pdo->prepare('INSERT INTO shoes(name, type, distance) VALUES(?, ?, ?)');
         $stmt->execute([$name, $type, $distance]);
-        header('Location: index.php', true, 301); 
-        exit();
+        header('Location: index.php'); 
     }
 }
+
+ob_end_flush();
+exit;
 
 ?>
 
