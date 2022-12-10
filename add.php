@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
     } ?>
 
     <select name="shoe-type" id="shoe-type-input">
-        <option value="" disabled selected>Choose a type...</option>
+        <option value="" disabled selected>Choose a shoe...</option>
         <option value="Hiking">Hiking</option>
         <option value="Running">Running</option>
         <option value="Casual">Casual</option>
